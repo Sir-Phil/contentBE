@@ -4,6 +4,8 @@ import cookieParser from "cookie-parser";
 import { errorHandler, notFound } from "./Middlewares/errorMiddleware";
 
 
+import userRoute from "./Routes/userRoute";
+
 const app = express();
 
 app.use(cors());
@@ -20,6 +22,9 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
       path: "config/.env",
     });
 }
+
+// api routing 
+app.use("/api/v1/user", userRoute);
 
 
 
