@@ -5,6 +5,7 @@ import { errorHandler, notFound } from "./Middlewares/errorMiddleware";
 
 
 import userRoute from "./Routes/userRoute";
+import contentRoute from "./Routes/contentRoute";
 
 const app = express();
 
@@ -25,6 +26,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 // api routing 
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/post", contentRoute)
 
 
 
