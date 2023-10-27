@@ -7,6 +7,7 @@ import { errorHandler, notFound } from "./Middlewares/errorMiddleware";
 import userRoute from "./Routes/userRoute";
 import contentRoute from "./Routes/contentRoute";
 import categoryRoute from "./Routes/categoryRoutes";
+import resetPasswordRoute  from "./Routes/resetPasswordRoute";
 
 const app = express();
 
@@ -29,6 +30,8 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/post", contentRoute);
 app.use("/api/v1/category", categoryRoute);
+app.use("/api/v1/setting", resetPasswordRoute );
+
 
 
 
