@@ -209,7 +209,7 @@ const updateUserInfo = asyncHandler(async (req: Request, res: Response, _next: N
 // @Route /api/v1/user/delete-user/:id
 // @Method DELETE
 //@access Private (user)
-const deleteUser = asyncHandler(async (req: Request, res: Response, _next: NextFunction) => {
+const deleteUser = asyncHandler(async (req: IUserRequest, res: Response, _next: NextFunction) => {
   try {
     const user = await User.findById(req.params.id);
 
