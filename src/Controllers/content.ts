@@ -9,17 +9,18 @@ import { IUserRequest } from '../interfaces/user';
 //@Access Private (User)
 
 const createPost = asyncHandler (async (req: IUserRequest, res: Response, _next: NextFunction) => {
-    const {title, body} = req.body
+    const {title, body, category} = req.body
 
     try {
-        if (!title || !body) {
-            res.status(400).json({ message: 'Please provide both a title and body for the post.' });
+        if (!title || !body || !category) {
+            res.status(400).json({ message: 'Title, body, and category are required..' });
           }
       
           const createNewPost = await Content.create({
             title,
             body,
             postedBy: req.user._id,
+            category,
           })
     
           res.status(201).json({

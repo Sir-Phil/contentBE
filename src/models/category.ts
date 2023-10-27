@@ -9,6 +9,6 @@ const categorySchema: Schema<ICategory> = new mongoose.Schema({
     timestamps: true
 })
 
-const Category = mongoose.model<ICategory>("Categories", categorySchema)
+const Category = mongoose.model<ICategory>("Category", categorySchema)
 
 export default Category
